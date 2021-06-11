@@ -7,12 +7,15 @@
             <a class="nav-link" routerLinkActive="active" routerLink='/members'>Matches</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="lists">Lists</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/lists">Lists</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="messages">Messages</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/messages">Messages</a>
           </li>
         </ng-container>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/errors">Error</a>
+        </li>
         </ul>
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
             <a  dropdownToggle class="dropdown-toggle text-light">Welcome {{user.username | titlecase}}</a>
