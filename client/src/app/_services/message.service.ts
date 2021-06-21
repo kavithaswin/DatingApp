@@ -13,7 +13,7 @@ export class MessageService {
 
   getMessages(pageNumber,pageSize,container){
     let params = getPaginationHeaders(pageNumber,pageSize);
-    params.append('Container',container);
+    params= params.append('Container',container);
     return getPaginatedResult<Message[]>(this.baseUrl+'messages',params,this.http);
 
   }
