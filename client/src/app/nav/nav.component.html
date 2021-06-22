@@ -12,6 +12,9 @@
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" routerLink="/messages">Messages</a>
           </li>
+          <li *appHasRole='["Admin","Moderator"]' class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/admin">Admin</a>
+          </li>
         </ng-container>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/errors">Error</a>
@@ -19,7 +22,7 @@
         </ul>
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
           <img src="{{user.photoUrl || './assets/user.png'}}" alt="{{user.username}}">
-            <a  dropdownToggle class="dropdown-toggle text-light">Welcome {{user.knownAs | titlecase}}</a>
+            <a  dropdownToggle class="dropdown-toggle text-light">Welcome {{user.knownAs || user.username | titlecase}}</a>
             <div class="dropdown-menu mt-3" *dropdownMenu>
                 <a routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
                 <div class="dropdown-divider"></div>
@@ -28,11 +31,11 @@
         </div>
         <form #loginForm ="ngForm" *ngIf="(accountService.currentUser$ | async)===null" class="d-flex" (ngSubmit)="login()" autocomplete="off">
           <input
-          name = "username"
-          [(ngModel)]="model.username"
+          name = "userName"
+          [(ngModel)]="model.userName"
            class="form-control me-2" 
            type="text"
-            placeholder="username" >
+            placeholder="userName" >
           <input 
           name="password"
           [(ngModel)]="model.password"

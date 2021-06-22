@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
 
   initializeForm(){
     this.registerForm = new FormGroup({
-      username : new FormControl('',Validators.required),
+      usernName : new FormControl('',Validators.required),
       password : new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(8)]),
       confirmPassword : new FormControl('',[Validators.required,this.matchValues('password')])
         })
@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
   }
   initializeFBForm(){
     this.registerForm = this.fb.group({
-      username :['',Validators.required],
+      userName :['',Validators.required],
       gender :['male'],
       knownAs :['',Validators.required],
       dateOfBirth :['',Validators.required],
