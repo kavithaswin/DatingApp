@@ -4,7 +4,10 @@
         <ul class="list-inline member-icons animate text-center">
             <li class="list-inline-item">
                 <button routerLink ='/members/{{member.userName}}' class="btn btn-primary">
-                    <i class="fa fa-user"></i>
+                    <span [class.is-online]="(presence.onlineUsers$ |async).includes(member.userName)">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    
                 </button>
             </li>
             <li class="list-inline-item">

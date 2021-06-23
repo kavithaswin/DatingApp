@@ -21,6 +21,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using DatingAPI.Extensions;
 using DatingAPI.Middleware;
+using DatingAPI.SignalR;
 
 namespace DatingAPI
 {
@@ -45,6 +46,7 @@ namespace DatingAPI
             });
             services.AddCors();
            services.AddIdentityServices(_config);
+           services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +64,7 @@ namespace DatingAPI
             app.UseRouting();
             app.UseCors(policy=> policy.AllowAnyHeader()
             .AllowAnyMethod()
+            .AllowCredentials()
             .WithOrigins("https://localhost:4200"));
             app.UseAuthentication();
             app.UseAuthorization();
@@ -69,6 +72,8 @@ namespace DatingAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<PresenceHub>("hubs/presence");
+                endpoints.MapHub<MessageHub>("hubs/message");
             });
         }
     }
