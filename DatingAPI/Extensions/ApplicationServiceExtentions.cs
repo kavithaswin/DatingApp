@@ -19,6 +19,7 @@ namespace DatingAPI.Extensions
             services.AddScoped<IMessageRepository,MessageRepository>();
             services.AddScoped<ILikesRepository,LikesRepository>();
             services.AddScoped<LogUserActivity>();
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
             services.AddScoped<IPhotoService,PhotoService>();
             services.AddScoped<IUserRepository,UserRepository>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
