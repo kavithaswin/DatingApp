@@ -128,7 +128,7 @@
     "Country": "Namibia",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/men/76.jpg",
+        "Url": "https://randomuser.me/api/portraits/women/76.jpg",
         "IsMain": true
       }
     ]
@@ -147,7 +147,7 @@
     "Country": "Northern Mariana Islands",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/men/26.jpg",
+        "Url": "https://randomuser.me/api/portraits/women/26.jpg",
         "IsMain": true
       }
     ]
@@ -166,7 +166,7 @@
     "Country": "Georgia",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/men/11.jpg",
+        "Url": "https://randomuser.me/api/portraits/women/11.jpg",
         "IsMain": true
       }
     ]
@@ -185,7 +185,7 @@
     "Country": "Saint Vincent and The Grenadines",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/men/33.jpg",
+        "Url": "https://randomuser.me/api/portraits/women/33.jpg",
         "IsMain": true
       }
     ]
